@@ -1,0 +1,29 @@
+name: XML Processor Build and Analysis
+run-name: ${{ github.actor }} is building XML Processor
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# disable permissions for all available scopes
+permissions: {}
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  gradle:
+    uses: tacascer-org/actions-workflows/.github/workflows/gradle_build.yml@v0
+    with:
+      java-version: 21
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    permissions:
+      security-events: write
+      contents: write
+      statuses: write
