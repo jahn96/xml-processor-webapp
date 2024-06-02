@@ -11,8 +11,9 @@ import org.springframework.boot.test.web.client.getForEntity
 import org.springframework.http.HttpStatus
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class UITests(@Autowired val restTemplate: TestRestTemplate) {
-
+class UITests(
+    @Autowired val restTemplate: TestRestTemplate,
+) {
     @BeforeAll
     fun setup() {
         println(">> Setup")
@@ -35,5 +36,4 @@ class UITests(@Autowired val restTemplate: TestRestTemplate) {
     fun teardown() {
         println(">> Tear down")
     }
-
 }

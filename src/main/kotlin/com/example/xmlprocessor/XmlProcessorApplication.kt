@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class XmlProcessorApplication
 
 fun main(args: Array<String>) {
-	runApplication<XmlProcessorApplication>(*args)
+    runApplication<XmlProcessorApplication>(*args)
 }
