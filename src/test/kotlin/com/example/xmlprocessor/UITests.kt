@@ -24,7 +24,7 @@ class UITests(
     @Test
     fun `Assert xml processor page title, content and status code`() {
         println(">> Assert xml processor page title, content and status code")
-        val entity = restTemplate.getForEntity<String>("http://localhost:$port/" )
+        val entity = restTemplate.getForEntity<String>("http://localhost:$port/")
         assertThat(entity.statusCode).isEqualTo(HttpStatus.OK)
         assertThat(entity.body).contains("<h1>XmlProcessor</h1>")
     }
