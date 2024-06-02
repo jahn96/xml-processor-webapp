@@ -20,8 +20,7 @@ jobs:
     uses: tacascer-org/actions-workflows/.github/workflows/gradle_build.yml@v0
     with:
       java-version: 21
-    secrets: inherit
-    env:
+    secrets:
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
     permissions:
       security-events: write
