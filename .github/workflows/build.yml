@@ -21,6 +21,8 @@ jobs:
     with:
       java-version: 21
     secrets: inherit
+    env:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
     permissions:
       security-events: write
       contents: write
